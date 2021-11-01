@@ -1,5 +1,5 @@
-import 'package:cyclelock_app/bindings/initial_binding.dart';
-import 'package:cyclelock_app/widgets/pages_widget.dart';
+import 'package:cycle_lock/bindings/initial_binding.dart';
+import 'package:cycle_lock/widgets/pages_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
 import 'package:get_storage/get_storage.dart';

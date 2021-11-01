@@ -1,5 +1,5 @@
-import 'package:cyclelock_app/api/api_manager.dart';
-import 'package:cyclelock_app/models/scan_model.dart';
+import 'package:cycle_lock/api/api_manager.dart';
+import 'package:cycle_lock/models/scan_model.dart';
 import 'package:get/get.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:get/instance_manager.dart';

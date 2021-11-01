@@ -1,4 +1,4 @@
-import 'package:cyclelock_app/models/scan_model.dart';
+import 'package:cycle_lock/models/scan_model.dart';
 import 'package:get/get_connect.dart';
 
 class ApiManager extends GetConnect {

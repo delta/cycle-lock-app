@@ -1,9 +1,9 @@
-import 'package:cyclelock_app/bindings/auth_binding.dart';
-import 'package:cyclelock_app/bindings/main_binding.dart';
-import 'package:cyclelock_app/bindings/splash_binding.dart';
-import 'package:cyclelock_app/views/auth_page.dart';
-import 'package:cyclelock_app/views/main_page.dart';
-import 'package:cyclelock_app/views/splash_page.dart';
+import 'package:cycle_lock/bindings/auth_binding.dart';
+import 'package:cycle_lock/bindings/main_binding.dart';
+import 'package:cycle_lock/bindings/splash_binding.dart';
+import 'package:cycle_lock/views/auth_page.dart';
+import 'package:cycle_lock/views/main_page.dart';
+import 'package:cycle_lock/views/splash_page.dart';
 import 'package:get/route_manager.dart';
 
 List<GetPage<dynamic>> getPages() => [

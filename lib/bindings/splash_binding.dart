@@ -1,4 +1,4 @@
-import 'package:cyclelock_app/controllers/splash_controller.dart';
+import 'package:cycle_lock/controllers/splash_controller.dart';
 import 'package:get/get.dart';
 
 class SplashBindings extends Bindings {

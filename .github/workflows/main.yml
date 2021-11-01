@@ -4,7 +4,7 @@ on: [push, pull_request]
 jobs:
   build:
     # This job will run on ubuntu virtual machine
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     steps:    
     # Setup Java environment in order to build the Android app.
     - uses: actions/checkout@v1
@@ -29,6 +29,18 @@ jobs:
       with:
         name: release-apk
         path: build/app/outputs/apk/release/app-release.apk
+    - run: |
+          flutter build ios --no-codesign
+          cd build/ios/iphoneos
+          mkdir Payload
+          cd Payload
+          ln -s ../Runner.app
+          cd ..
+          zip -r app.ipa Payload
+    - uses: actions/upload-artifact@v1
+      with:
+        name: release-ios
+        path:  build/ios/iphoneos/app.ipa             
   # build_ios:
   #   name: Build iOS
   #   needs: [flutter_test]
@@ -43,4 +55,4 @@ jobs:
   #         channel: "stable"
   #     - run: flutter pub get
   #     - run: flutter clean
-  #     - run: flutter build ios --release --no-codesign      
+  #     - run: flutter build ios --release --no-codesign      build/ios/iphoneos/app.ipa
