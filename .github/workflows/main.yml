@@ -3,6 +3,10 @@ on:
   push:
     branches:
       - main
+  pull_request:
+    branches:
+      - main 
+
 env:
   flutter_version: "2.5.x"
   java_version: "12.x"
@@ -24,18 +28,16 @@ jobs:
       - uses: subosito/flutter-action@v1
         with:
           flutter-version: ${{ env.flutter_version }}
-      - name: Clean 
-        run: flutter clean   
       - name: Install dependencies
         run: flutter pub get
       - name: Format
         run: flutter format --dry-run . --set-exit-if-changed
       - name: Lint
         run:  flutter analyze 
-      - name: Build
+      - if: github.event_name == 'push'
         run: flutter build apk
-      - uses: actions/upload-artifact@v1
+      - if: github.event_name == 'push'
+        uses: actions/upload-artifact@v1
         with:
           name: release-apk
           path: build/app/outputs/apk/release/app-release.apk 
-          
