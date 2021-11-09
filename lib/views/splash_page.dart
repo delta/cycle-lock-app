@@ -8,9 +8,7 @@ import 'package:flutter/services.dart';
 import 'auth_page.dart';
 import 'package:get/get.dart';
 
-void main() => {
-  runApp(const SplashPage())
-};
+void main() => {runApp(const SplashPage())};
 
 void startTimer() {
   Timer(const Duration(seconds: 5), () {
@@ -18,7 +16,7 @@ void startTimer() {
   });
 }
 
-void navigateUser() async{
+void navigateUser() async {
   Get.to(const AuthPage());
 }
 
@@ -30,36 +28,36 @@ class SplashPage extends StatelessWidget {
     SystemChrome.setEnabledSystemUIOverlays([SystemUiOverlay.top]);
     startTimer();
     return MaterialApp(
-      home: Scaffold(
-        body: Center(
+        home: Scaffold(
+      body: Center(
         child: Column(
-        mainAxisAlignment: MainAxisAlignment.center ,
-        children:[
-        const SizedBox(height: 255),
-        Lottie.asset(
-        'assets/lottie/cycling.json',
-        repeat: true,
-        animate: true,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const SizedBox(height: 255),
+            Lottie.asset(
+              'assets/lottie/cycling.json',
+              repeat: true,
+              animate: true,
             ),
-          const SizedBox(height: 5),
-          const Text('Pad-Lock',
-              style: TextStyle(fontFamily: 'Moon', fontSize: 35,
-                  shadows: <Shadow>[
-              Shadow(
-              offset: Offset(3.0, 3.0),
-            blurRadius: 3.0,
-            color: Color.fromARGB(150, 36, 195, 20),
-              )])
-          ),
-          const SizedBox(height: 240),
-          const Text('Made with 💚 by Delta',
-          style: TextStyle(fontFamily: 'Moon', fontSize: 18))
-
-        ],
+            const SizedBox(height: 5),
+            const Text('Pad-Lock',
+                style: TextStyle(
+                    fontFamily: 'Moon',
+                    fontSize: 35,
+                    shadows: <Shadow>[
+                      Shadow(
+                        offset: Offset(3.0, 3.0),
+                        blurRadius: 3.0,
+                        color: Color.fromARGB(150, 36, 195, 20),
+                      )
+                    ])),
+            const SizedBox(height: 240),
+            const Text('Made with 💚 by Delta',
+                style: TextStyle(fontFamily: 'Moon', fontSize: 18))
+          ],
         ),
       ),
-    )
-    );
+    ));
   }
 }
 
