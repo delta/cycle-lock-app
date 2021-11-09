@@ -7,6 +7,6 @@ class ScanView extends GetView<ScanningController> {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold();
   }
 }
