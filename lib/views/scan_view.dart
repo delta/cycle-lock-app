@@ -39,7 +39,8 @@ class ScanView extends GetView<ScanningController> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             IconButton(
-                onPressed: controller.flash, icon: Icon(Icons.flash_on_rounded))
+                onPressed: controller.flash,
+                icon: const Icon(Icons.flash_on_rounded))
           ],
         ),
       );
