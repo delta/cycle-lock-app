@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       initialBinding: InitialBindings(),
-      initialRoute: '/main',
+      initialRoute: '/scan',
       getPages: getPages(),
     );
   }
