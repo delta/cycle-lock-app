@@ -1,12 +1,19 @@
-import 'package:cycle_lock/controllers/login_controller.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
 
-class AuthPage extends GetView<AuthController> {
+void main() => runApp(const AuthPage());
+
+class AuthPage extends StatelessWidget {
   const AuthPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return const MaterialApp(
+      title: 'Welcome to the Auth Page',
+      home: Scaffold(
+        body: Center(
+          child: Text('AUTH PAGE'),
+        ),
+      ),
+    );
   }
 }

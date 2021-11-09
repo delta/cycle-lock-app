@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.cyclelock_app">
    <application
-        android:label="Cycle Lock"
+        android:label="Pad-Lock"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
