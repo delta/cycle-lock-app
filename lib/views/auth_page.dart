@@ -38,11 +38,11 @@ class AuthPage extends GetView<AuthController> {
                     left: 35),
                 child: Column(
                   children: [
-                    const CustomTextField(inputText: 'Enter your e-mail'),
+                    const CustomTextField(key: null,inputText: 'Enter your e-mail'),
                     const SizedBox(
                       height: 37,
                     ),
-                    const CustomTextField(inputText: 'Enter your password'),
+                    const CustomTextField(key:null,inputText: 'Enter your password'),
                     const SizedBox(
                       height: 40,
                     ),

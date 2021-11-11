@@ -3,7 +3,8 @@ import 'app_theme.dart';
 
 class CustomTextField extends StatelessWidget {
   final String inputText;
-  const CustomTextField({required this.inputText});
+  const CustomTextField({required Key? key, required this.inputText}) :super(key: key);
+ // const CustomTextField({required this.inputText});
 
   @override
   Widget build(BuildContext context) {
