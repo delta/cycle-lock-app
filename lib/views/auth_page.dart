@@ -1,5 +1,7 @@
 import 'package:cycle_lock/controllers/login_controller.dart';
 import 'package:cycle_lock/views/main_page.dart';
+import 'package:cycle_lock/widgets/app_theme.dart';
+import 'package:cycle_lock/widgets/custom_textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:get/get.dart';
@@ -12,17 +14,17 @@ class AuthPage extends GetView<AuthController> {
     return Container(
       decoration: const BoxDecoration(
           image: DecorationImage(
-              image: AssetImage('assets/login bg.png'), fit: BoxFit.cover)),
+              image: AssetImage('assets/login-bg.webp'), fit: BoxFit.cover)),
       child: Scaffold(
         backgroundColor: Colors.transparent,
         body: Stack(
           children: [
             Container(
               padding: const EdgeInsets.only(left: 40, top: 265),
-              child: const Text(
+              child: Text(
                 'Welcome User',
                 style: TextStyle(
-                    color: Colors.black,
+                    color: AppTheme.colours.black,
                     fontWeight: FontWeight.bold,
                     fontFamily: 'Moon',
                     fontSize: 40),
@@ -36,28 +38,11 @@ class AuthPage extends GetView<AuthController> {
                     left: 35),
                 child: Column(
                   children: [
-                    TextField(
-                      decoration: InputDecoration(
-                        fillColor: Colors.grey.shade50,
-                        filled: true,
-                        hintText: 'Enter your e-mail',
-                        border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10)),
-                      ),
-                    ),
+                    const CustomTextField(inputText: 'Enter your e-mail'),
                     const SizedBox(
                       height: 37,
                     ),
-                    TextField(
-                      obscureText: true,
-                      decoration: InputDecoration(
-                        fillColor: Colors.grey.shade50,
-                        filled: true,
-                        hintText: 'Enter your password',
-                        border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10)),
-                      ),
-                    ),
+                    const CustomTextField(inputText: 'Enter your password'),
                     const SizedBox(
                       height: 40,
                     ),
@@ -72,10 +57,10 @@ class AuthPage extends GetView<AuthController> {
                           ),
                         ),
                         CircleAvatar(
-                          radius: 30,
-                          backgroundColor: const Color(0x00000000),
+                          radius: 20,
+                          backgroundColor: AppTheme.colours.black,
                           child: IconButton(
-                            color: Colors.white,
+                            color: AppTheme.colours.white,
                             onPressed: () => Get.to(const MainPage()),
                             icon: const Icon(Icons.arrow_forward_ios_outlined),
                           ),
@@ -90,26 +75,26 @@ class AuthPage extends GetView<AuthController> {
                       children: [
                         TextButton(
                           onPressed: () {},
-                          child: const Text(
+                          child: Text(
                             'Sign Up',
                             textAlign: TextAlign.left,
                             style: TextStyle(
                                 decoration: TextDecoration.underline,
                                 fontFamily: 'Moon',
-                                color: Color(0xff4c505b),
+                                color: AppTheme.colours.darkGrey,
                                 fontSize: 18),
                           ),
                           style: const ButtonStyle(),
                         ),
                         TextButton(
                             onPressed: () {},
-                            child: const Text(
+                            child: Text(
                               'Forgot Password?',
                               style: TextStyle(
                                 decoration: TextDecoration.underline,
                                 fontFamily: 'Moon',
                                 fontSize: 18,
-                                color: Color(0xff4c505b),
+                                color: AppTheme.colours.darkGrey,
                               ),
                             )),
                       ],

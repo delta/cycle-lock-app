@@ -76,7 +76,7 @@ flutter:
   fonts:
       - family: Moon
         fonts:
-          - asset: assets/fonts/Moon Light.otf
+          - asset: assets/fonts/newsreader.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro
