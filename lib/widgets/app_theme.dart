@@ -8,6 +8,6 @@ class AppTheme {
   const AppTheme._();
 
   static ThemeData define() {
-    return ThemeData(fontFamily: 'newsreader.ttf');
+    return ThemeData();
   }
 }

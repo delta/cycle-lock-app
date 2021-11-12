@@ -5,6 +5,7 @@ import 'package:cycle_lock/widgets/custom_textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class AuthPage extends GetView<AuthController> {
   const AuthPage({Key? key}) : super(key: key);
@@ -23,11 +24,11 @@ class AuthPage extends GetView<AuthController> {
               padding: const EdgeInsets.only(left: 40, top: 265),
               child: Text(
                 'Welcome User',
-                style: TextStyle(
-                    color: AppTheme.colours.black,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: 'Moon',
-                    fontSize: 40),
+                style: GoogleFonts.lato(
+                    textStyle: TextStyle(
+                        color: AppTheme.colours.black,
+                        fontSize: 40,
+                        fontWeight: FontWeight.bold)),
               ),
             ),
             SingleChildScrollView(
@@ -39,24 +40,27 @@ class AuthPage extends GetView<AuthController> {
                 child: Column(
                   children: [
                     const CustomTextField(
-                        key: null, inputText: 'Enter your e-mail'),
+                        key: null,
+                        inputText: 'Enter your e-mail',
+                        obscureText: false),
                     const SizedBox(
                       height: 37,
                     ),
                     const CustomTextField(
-                        key: null, inputText: 'Enter your password'),
+                        key: null,
+                        inputText: 'Enter your password',
+                        obscureText: true),
                     const SizedBox(
                       height: 40,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        const Text(
+                        Text(
                           'Login',
-                          style: TextStyle(
-                            fontSize: 30,
-                            fontFamily: 'Moon',
-                          ),
+                          style: GoogleFonts.lato(
+                              textStyle: TextStyle(
+                                  color: AppTheme.colours.black, fontSize: 30)),
                         ),
                         CircleAvatar(
                           radius: 20,
@@ -80,11 +84,11 @@ class AuthPage extends GetView<AuthController> {
                           child: Text(
                             'Sign Up',
                             textAlign: TextAlign.left,
-                            style: TextStyle(
-                                decoration: TextDecoration.underline,
-                                fontFamily: 'Moon',
-                                color: AppTheme.colours.darkGrey,
-                                fontSize: 18),
+                            style: GoogleFonts.lato(
+                                textStyle: TextStyle(
+                                    color: AppTheme.colours.darkGrey,
+                                    fontSize: 18,
+                                    decoration: TextDecoration.underline)),
                           ),
                           style: const ButtonStyle(),
                         ),
@@ -92,12 +96,11 @@ class AuthPage extends GetView<AuthController> {
                             onPressed: () {},
                             child: Text(
                               'Forgot Password?',
-                              style: TextStyle(
-                                decoration: TextDecoration.underline,
-                                fontFamily: 'Moon',
-                                fontSize: 18,
-                                color: AppTheme.colours.darkGrey,
-                              ),
+                              style: GoogleFonts.lato(
+                                  textStyle: TextStyle(
+                                      color: AppTheme.colours.darkGrey,
+                                      fontSize: 18,
+                                      decoration: TextDecoration.underline)),
                             )),
                       ],
                     )
