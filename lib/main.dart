@@ -17,11 +17,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       initialBinding: InitialBindings(),
-<<<<<<< HEAD
-      initialRoute: '/auth',
-=======
       initialRoute: '/main',
->>>>>>> feat:Implement bottombar and appbar
       getPages: getPages(),
     );
   }

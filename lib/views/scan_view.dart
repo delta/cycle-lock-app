@@ -21,7 +21,7 @@ class ScanView extends GetView<ScanningController> {
           borderColor: const Color(0xffff633c),
           borderRadius: 10,
           borderLength: 20,
-          borderWidth: 10,
+          borderWidth: 12,
           cutOutSize: MediaQuery.of(context).size.width * 0.6,
         ),
       );
