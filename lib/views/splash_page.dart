@@ -7,6 +7,7 @@ import 'package:lottie/lottie.dart';
 import 'package:flutter/services.dart';
 import 'auth_page.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() => {runApp(const SplashPage())};
 
@@ -41,20 +42,25 @@ class SplashPage extends StatelessWidget {
               animate: true,
             ),
             const SizedBox(height: 5),
-            const Text('Pad-Lock',
-                style: TextStyle(
-                    fontFamily: 'Moon',
-                    fontSize: 35,
-                    shadows: <Shadow>[
-                      Shadow(
-                        offset: Offset(3.0, 3.0),
-                        blurRadius: 3.0,
-                        color: Color.fromARGB(150, 36, 195, 20),
-                      )
-                    ])),
+            Text('Pad-Lock',
+                style: GoogleFonts.monda(
+                  textStyle: const TextStyle(
+                      fontSize: 35,
+                      shadows: <Shadow>[
+                  Shadow(
+                  offset: Offset(3.0, 3.0),
+                  blurRadius: 3.0,
+                  color: Color.fromARGB(150, 36, 195, 20),
+                )
+      ],
+        ),
+
+                    )),
             const SizedBox(height: 240),
-            const Text('Made with 💚 by Delta',
-                style: TextStyle(fontFamily: 'Moon', fontSize: 18))
+            Text('Made with 💚 by Delta',
+                style: GoogleFonts.monda(
+                    textStyle:const TextStyle(
+                        fontSize: 18))),
           ],
         ),
       ),
