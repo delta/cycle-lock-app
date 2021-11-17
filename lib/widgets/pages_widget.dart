@@ -6,6 +6,8 @@ import 'package:cycle_lock/views/auth_page.dart';
 import 'package:cycle_lock/views/main_page.dart';
 import 'package:cycle_lock/views/scan_view.dart';
 import 'package:cycle_lock/views/splash_page.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:get/route_manager.dart';
 
 List<GetPage<dynamic>> getPages() => [
@@ -30,3 +32,19 @@ List<GetPage<dynamic>> getPages() => [
         binding: ScanningBindings(),
       )
     ];
+
+const pageList = [
+  {
+    'name': 'Map',
+    'view': Center(
+      child: Text('Map page'),
+    ),
+    'icon': Icons.map_sharp
+  },
+  {'name': 'Scan', 'view': ScanView(), 'icon': Icons.qr_code},
+  {
+    'name': 'Profile',
+    'view': Center(child: Text('Profile Page')),
+    'icon': Icons.person
+  }
+];

@@ -1,4 +1,5 @@
 import 'package:cycle_lock/controllers/scan_controller.dart';
+import 'package:cycle_lock/widgets/colours.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
@@ -8,22 +9,20 @@ class ScanView extends GetView<ScanningController> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(title: const Text('Cycle lock')),
-        body: Stack(alignment: Alignment.center, children: <Widget>[
-          Positioned(child: qrView(context)),
-          Positioned(bottom: 30, child: controlButtons())
-        ]));
+    return Stack(children: <Widget>[
+      Positioned(child: qrView(context)),
+      // Positioned(bottom: 30, child: controlButtons())
+    ]);
   }
 
   Widget qrView(context) => QRView(
         key: controller.qrKey,
         onQRViewCreated: controller.onQRViewCreated,
         overlay: QrScannerOverlayShape(
-          borderColor: Colors.blue.shade200,
+          borderColor: const AppColours().orangeAccent,
           borderRadius: 10,
           borderLength: 20,
-          borderWidth: 10,
+          borderWidth: 12,
           cutOutSize: MediaQuery.of(context).size.width * 0.6,
         ),
       );
