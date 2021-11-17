@@ -8,19 +8,17 @@ class ScanView extends GetView<ScanningController> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(title: const Text('Cycle lock')),
-        body: Stack(alignment: Alignment.center, children: <Widget>[
-          Positioned(child: qrView(context)),
-          Positioned(bottom: 30, child: controlButtons())
-        ]));
+    return Stack(children: <Widget>[
+      Positioned(child: qrView(context)),
+      // Positioned(bottom: 30, child: controlButtons())
+    ]);
   }
 
   Widget qrView(context) => QRView(
         key: controller.qrKey,
         onQRViewCreated: controller.onQRViewCreated,
         overlay: QrScannerOverlayShape(
-          borderColor: Colors.blue.shade200,
+          borderColor: const Color(0xffff633c),
           borderRadius: 10,
           borderLength: 20,
           borderWidth: 10,

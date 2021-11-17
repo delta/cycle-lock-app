@@ -1,3 +1,9 @@
-import 'package:get/get_state_manager/src/simple/get_controllers.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:get/state_manager.dart';
 
-class MainController extends GetxController {}
+class MainController extends GetxController {
+  var nav = 1.obs;
+  var scaffoldKey = GlobalKey<ScaffoldState>();
+  onClick(int index) => nav.value = index;
+}
