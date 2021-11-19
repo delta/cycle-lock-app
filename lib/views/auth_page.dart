@@ -1,116 +1,109 @@
 import 'package:cycle_lock/controllers/login_controller.dart';
-import 'package:cycle_lock/views/main_page.dart';
-import 'package:cycle_lock/widgets/app_theme.dart';
-import 'package:cycle_lock/widgets/custom_textfield.dart';
+import 'package:cycle_lock/model/slide.dart';
+import 'package:cycle_lock/widgets/dots.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
+import '../widgets/carousel.dart';
+import '../widgets/dots.dart';
 
 class AuthPage extends GetView<AuthController> {
   const AuthPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: const BoxDecoration(
-          image: DecorationImage(
-              image: AssetImage('assets/login-bg.webp'), fit: BoxFit.cover)),
-      child: Scaffold(
-        backgroundColor: Colors.transparent,
-        body: Stack(
-          children: [
-            Container(
-              padding: const EdgeInsets.only(left: 40, top: 265),
-              child: Text(
-                'Welcome User',
-                style: GoogleFonts.lato(
-                    textStyle: TextStyle(
-                        color: AppTheme.colours.black,
-                        fontSize: 40,
-                        fontWeight: FontWeight.bold)),
-              ),
-            ),
-            SingleChildScrollView(
-              child: Container(
-                padding: EdgeInsets.only(
-                    top: MediaQuery.of(context).size.height * 0.5,
-                    right: 35,
-                    left: 35),
-                child: Column(
-                  children: [
-                    const CustomTextField(
-                        key: null,
-                        inputText: 'Enter your e-mail',
-                        obscureText: false),
-                    const SizedBox(
-                      height: 37,
-                    ),
-                    const CustomTextField(
-                        key: null,
-                        inputText: 'Enter your password',
-                        obscureText: true),
-                    const SizedBox(
-                      height: 40,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          'Login',
-                          style: GoogleFonts.lato(
-                              textStyle: TextStyle(
-                                  color: AppTheme.colours.black, fontSize: 30)),
-                        ),
-                        CircleAvatar(
-                          radius: 20,
-                          backgroundColor: AppTheme.colours.black,
-                          child: IconButton(
-                            color: AppTheme.colours.white,
-                            onPressed: () => Get.to(const MainPage()),
-                            icon: const Icon(Icons.arrow_forward_ios_outlined),
-                          ),
-                        )
-                      ],
-                    ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        TextButton(
-                          onPressed: () {},
-                          child: Text(
-                            'Sign Up',
-                            textAlign: TextAlign.left,
-                            style: GoogleFonts.lato(
-                                textStyle: TextStyle(
-                                    color: AppTheme.colours.darkGrey,
-                                    fontSize: 18,
-                                    decoration: TextDecoration.underline)),
-                          ),
-                          style: const ButtonStyle(),
-                        ),
-                        TextButton(
-                            onPressed: () {},
-                            child: Text(
-                              'Forgot Password?',
-                              style: GoogleFonts.lato(
-                                  textStyle: TextStyle(
-                                      color: AppTheme.colours.darkGrey,
-                                      fontSize: 18,
-                                      decoration: TextDecoration.underline)),
-                            )),
-                      ],
-                    )
-                  ],
+    return SafeArea(
+        child: Scaffold(
+      body: Container(
+        color: Colors.white,
+        child: Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Obx(
+            () => Column(
+              children: <Widget>[
+                Expanded(
+                  child: Stack(
+                    alignment: AlignmentDirectional.bottomCenter,
+                    children: <Widget>[
+                      PageView(
+                          //controller: controller.pageController,
+                          children: <Widget>[
+                            for (int i = 0; i < slideList.length; i++)
+                              Carousel(i)
+                          ],
+                          onPageChanged: (index) =>
+                              controller.index.value = index),
+                      Stack(
+                        alignment: AlignmentDirectional.topStart,
+                        children: <Widget>[
+                          Container(
+                              margin: const EdgeInsets.only(bottom: 35),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.min,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: <Widget>[
+                                  for (int i = 0; i < slideList.length; i++)
+                                    SlideDots(
+                                      index: i,
+                                      selectedIndex: controller.index.value,
+                                    )
+                                ],
+                              ))
+                        ],
+                      )
+                    ],
+                  ),
                 ),
-              ),
-            )
-          ],
+                const SizedBox(
+                  height: 20,
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: <Widget>[
+                    Container(
+                      margin: const EdgeInsets.symmetric(horizontal: 30),
+                      child: FlatButton(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Flexible(
+                              flex: 1,
+                              child: Image.asset(
+                                'assets/delta_logo.png',
+                                height: 32,
+                              ),
+                            ),
+                            const Expanded(
+                              child: Text(
+                                'Sign in with DeltaForce',
+                                style: TextStyle(fontSize: 12),
+                                textAlign: TextAlign.left,
+                              ),
+                            ),
+                          ],
+                        ),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(5),
+                        ),
+                        padding: const EdgeInsets.all(15),
+                        color: Colors.black,
+                        textColor: Colors.white,
+                        onPressed: () {},
+                      ),
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: const <Widget>[
+                        //FlatButton(child: Text('Login')),
+                      ],
+                    ),
+                  ],
+                )
+              ],
+            ),
+          ),
         ),
       ),
-    );
+    ));
   }
 }
