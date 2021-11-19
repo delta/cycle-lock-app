@@ -62,7 +62,7 @@ class AuthPage extends GetView<AuthController> {
                   children: <Widget>[
                     Container(
                       margin: const EdgeInsets.symmetric(horizontal: 30),
-                      child: FlatButton(
+                      child: TextButton(
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
@@ -82,12 +82,13 @@ class AuthPage extends GetView<AuthController> {
                             ),
                           ],
                         ),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(5),
-                        ),
-                        padding: const EdgeInsets.all(15),
-                        color: Colors.black,
-                        textColor: Colors.white,
+                        style: ButtonStyle(
+                            shape: MaterialStateProperty.all<
+                                    RoundedRectangleBorder>(
+                                RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(18.0),
+                                    side: const BorderSide(
+                                        color: Colors.white)))),
                         onPressed: () {},
                       ),
                     ),
