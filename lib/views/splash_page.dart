@@ -42,15 +42,13 @@ class SplashPage extends StatelessWidget {
             ),
             const SizedBox(height: 5),
             const Text('Pad-Lock',
-                style: TextStyle(
-                    fontSize: 35,
-                    shadows: <Shadow>[
-                      Shadow(
-                        offset: Offset(1.0, 1.0),
-                        blurRadius: 1.0,
-                        color: Color.fromARGB(150, 36, 195, 20),
-                      )
-                    ])),
+                style: TextStyle(fontSize: 35, shadows: <Shadow>[
+                  Shadow(
+                    offset: Offset(1.0, 1.0),
+                    blurRadius: 1.0,
+                    color: Color.fromARGB(150, 36, 195, 20),
+                  )
+                ])),
             const SizedBox(height: 240),
             const Text('Made with 💚 by Delta Force',
                 style: TextStyle(fontSize: 18))
