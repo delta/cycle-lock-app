@@ -3,7 +3,6 @@ import 'package:cycle_lock/models/slide.dart';
 import 'package:cycle_lock/widgets/colours.dart';
 import 'package:cycle_lock/widgets/dots.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:get/get.dart';
 import '../widgets/carousel.dart';
@@ -69,7 +68,7 @@ class AuthPage extends GetView<AuthController> {
                         Flexible(
                           flex: 1,
                           child: Image.asset(
-                            'assets/delta_logo.png',
+                            'assets/images/delta_logo.png',
                             height: 32,
                           ),
                         ),

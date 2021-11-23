@@ -26,12 +26,6 @@ class SplashController extends GetxController
     });
   }
 
-  @override
-  void onClose() {
-    print('bye');
-    super.onClose();
-  }
-
   void navigateUser() {
     _timer.cancel();
     Get.toNamed('/auth');
