@@ -1,35 +1,14 @@
-import 'dart:async';
-
+import 'package:cycle_lock/controllers/splash_controller.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:get/get_navigation/src/extension_navigation.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
-import 'package:flutter/services.dart';
-import 'auth_page.dart';
 import 'package:get/get.dart';
 
-void main() => {runApp(const SplashPage())};
-
-void startTimer() {
-  Timer(const Duration(seconds: 4), () {
-    navigateUser(); //It will redirect  after 4 seconds
-  });
-}
-
-void navigateUser() async {
-  Get.to(const AuthPage());
-}
-
-class SplashPage extends StatelessWidget {
+class SplashPage extends GetView<SplashController> {
   const SplashPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setEnabledSystemUIOverlays([SystemUiOverlay.top]);
-    startTimer();
-    return MaterialApp(
-        home: Scaffold(
+    return Scaffold(
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -37,7 +16,6 @@ class SplashPage extends StatelessWidget {
             const SizedBox(height: 255),
             Lottie.asset(
               'assets/lottie/cycling.json',
-              repeat: true,
               animate: true,
             ),
             const SizedBox(height: 5),
@@ -50,15 +28,11 @@ class SplashPage extends StatelessWidget {
                   )
                 ])),
             const SizedBox(height: 240),
-            const Text('Made with 💚 by Delta Force',
+            const Text('Made with 💚 by DeltaForce',
                 style: TextStyle(fontSize: 18))
           ],
         ),
       ),
-    ));
+    );
   }
 }
-
-//ElevatedButton(
-//               onPressed: () => Get.to(const AuthPage()), // Passing data by using "arguments"
-//               child: const Text('Go to page One')),
