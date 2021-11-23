@@ -13,7 +13,7 @@ class CustomAppbar extends StatelessWidget {
       child: Center(
         child: Text(
           title,
-          style: TextStyle(color: const AppColours().white, fontSize: 25),
+          style: TextStyle(color: const AppColours().white, fontSize: 22),
         ),
       ),
       decoration: BoxDecoration(

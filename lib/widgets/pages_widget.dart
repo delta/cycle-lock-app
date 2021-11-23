@@ -15,6 +15,9 @@ List<GetPage<dynamic>> getPages() => [
         name: '/splash',
         page: () => const SplashPage(),
         binding: SplashBindings(),
+        transition: Transition.leftToRightWithFade,
+        opaque: false,
+        showCupertinoParallax: true,
       ),
       GetPage(
         name: '/auth',
