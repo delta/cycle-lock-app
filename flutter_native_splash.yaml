@@ -41,7 +41,7 @@ flutter_native_splash:
   ios_content_mode: center
   #
   # web_image_mode can be one of the following modes: center, contain, stretch, and cover.
-  web_image_mode: center
+  
 
   # To hide the notification bar, use the fullscreen parameter.  Has no affect in web since web
   # has no notification bar.  Defaults to false.

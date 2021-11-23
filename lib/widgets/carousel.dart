@@ -1,4 +1,5 @@
-import 'package:cycle_lock/model/slide.dart';
+import 'package:cycle_lock/models/slide.dart';
+import 'package:cycle_lock/widgets/colours.dart';
 import 'package:flutter/material.dart';
 
 class Carousel extends StatelessWidget {
@@ -17,7 +18,7 @@ class Carousel extends StatelessWidget {
               height: 50,
             ),
             Container(
-              width: 500,
+              width: 300,
               height: 250,
               decoration: BoxDecoration(
                   //shape: BoxShape.rectangle,
@@ -32,15 +33,20 @@ class Carousel extends StatelessWidget {
               slideList[index].title,
               style: TextStyle(
                 fontSize: 22,
-                color: Theme.of(context).primaryColor,
+                fontWeight: FontWeight.bold,
+                color: const AppColours().green,
               ),
             ),
             const SizedBox(
-              height: 20,
+              height: 24,
             ),
             Text(
               slideList[index].description,
               textAlign: TextAlign.center,
+              style: const TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.w400,
+              ),
             ),
           ],
         ),
