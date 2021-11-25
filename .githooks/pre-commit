@@ -1,10 +1,7 @@
 #!/usr/bin/env bash
 echo "Run Formatting..."
-
 flutter format .
-
 echo "Run Linting..."
-
 flutter analyze
 
 if [ $? -ne 0 ] 
