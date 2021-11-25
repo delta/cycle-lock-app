@@ -1,0 +1,13 @@
+echo "Run Formatting..."
+
+flutter format lib/
+
+echo "Run Linting..."
+
+flutter analyze
+
+if [ $? -ne 0 ] 
+then
+echo "flutter analyze error"
+  exit 1
+fi

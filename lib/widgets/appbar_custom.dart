@@ -1,5 +1,5 @@
+import 'package:cycle_lock/widgets/colours.dart';
 import 'package:flutter/material.dart';
-import 'colours.dart';
 
 class CustomAppbar extends StatelessWidget {
   final String title;
@@ -7,20 +7,19 @@ class CustomAppbar extends StatelessWidget {
   const CustomAppbar({Key? key, required this.title}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: 53,
-      child: Center(
-        child: Text(
-          title,
-          style: TextStyle(color: const AppColours().white, fontSize: 22),
+  Widget build(BuildContext context) => Container(
+        height: 53,
+        child: Center(
+          child: Text(
+            title,
+            style: TextStyle(color: const AppColours().white, fontSize: 22),
+          ),
         ),
-      ),
-      decoration: BoxDecoration(
-        borderRadius: const BorderRadius.only(
-            bottomLeft: Radius.circular(40), bottomRight: Radius.circular(40)),
-        color: const AppColours().violetFill,
-      ),
-    );
-  }
+        decoration: BoxDecoration(
+          borderRadius: const BorderRadius.only(
+              bottomLeft: Radius.circular(40),
+              bottomRight: Radius.circular(40)),
+          color: const AppColours().violetFill,
+        ),
+      );
 }

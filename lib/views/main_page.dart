@@ -9,20 +9,18 @@ class MainPage extends GetView<MainController> {
   const MainPage({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return SafeArea(
-      child: Obx(() => Scaffold(
-            key: controller.scaffoldKey,
-            body: Stack(
-              children: [
-                pageList[controller.nav.value]['view']! as Widget,
-                CustomAppbar(
-                  title: pageList[controller.nav.value]['name'] as String,
-                ),
-                BottomNavView(controller: controller)
-              ],
-            ),
-          )),
-    );
-  }
+  Widget build(BuildContext context) => SafeArea(
+        child: Obx(() => Scaffold(
+              key: controller.scaffoldKey,
+              body: Stack(
+                children: [
+                  pageList[controller.nav.value]['view']! as Widget,
+                  CustomAppbar(
+                    title: pageList[controller.nav.value]['name'] as String,
+                  ),
+                  BottomNavView(controller: controller)
+                ],
+              ),
+            )),
+      );
 }

@@ -21,9 +21,7 @@ class SplashController extends GetxController
   }
 
   void startTimer() {
-    _timer = Timer(const Duration(milliseconds: 3000), () {
-      navigateUser(); //It will redirect  after 4 seconds
-    });
+    _timer = Timer(const Duration(milliseconds: 3000), navigateUser);
   }
 
   void navigateUser() {

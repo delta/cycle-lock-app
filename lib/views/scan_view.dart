@@ -8,12 +8,10 @@ class ScanView extends GetView<ScanningController> {
   const ScanView({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return Stack(children: <Widget>[
-      Positioned(child: qrView(context)),
-      // Positioned(bottom: 30, child: controlButtons())
-    ]);
-  }
+  Widget build(BuildContext context) => Stack(children: <Widget>[
+        Positioned(child: qrView(context)),
+        // Positioned(bottom: 30, child: controlButtons())
+      ]);
 
   Widget qrView(context) => QRView(
         key: controller.qrKey,

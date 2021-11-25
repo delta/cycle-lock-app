@@ -1,0 +1,5 @@
+if [[ `git status --porcelain` ]]
+then
+  echo "un-commited changes found, do commit or stash them"
+  exit 1
+fi

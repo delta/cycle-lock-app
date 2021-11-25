@@ -7,7 +7,5 @@ class AppTheme {
 
   const AppTheme._();
 
-  static ThemeData define() {
-    return ThemeData();
-  }
+  static ThemeData define() => ThemeData();
 }
