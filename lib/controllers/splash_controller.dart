@@ -26,6 +26,6 @@ class SplashController extends GetxController
 
   void navigateUser() {
     _timer.cancel();
-    Get.toNamed('/auth');
+    Get.offAllNamed('/auth');
   }
 }

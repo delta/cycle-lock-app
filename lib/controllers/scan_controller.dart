@@ -26,7 +26,7 @@ class ScanningController extends GetxController with StateMixin<ScanningModel> {
     this.controller = controller;
     controller.scannedDataStream.listen((scanData) {
       result = scanData;
-      Get.snackbar('QR', result!.code!);
+      //Get.snackbar('QR', result!.code!);
     });
   }
 

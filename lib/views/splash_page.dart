@@ -1,5 +1,5 @@
 import 'package:cycle_lock/controllers/splash_controller.dart';
-import 'package:cycle_lock/widgets/colours.dart';
+import 'package:cycle_lock/widgets/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:get/get.dart';
@@ -26,7 +26,7 @@ class SplashPage extends GetView<SplashController> {
                         Shadow(
                           offset: const Offset(1.0, 1.0),
                           blurRadius: 1.0,
-                          color: const AppColours().green,
+                          color: const AppColours().secondaryaccentcolor,
                         )
                       ]))
                 ]))),

@@ -1,5 +1,5 @@
 import 'package:cycle_lock/controllers/scan_controller.dart';
-import 'package:cycle_lock/widgets/colours.dart';
+import 'package:cycle_lock/widgets/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
@@ -17,7 +17,7 @@ class ScanView extends GetView<ScanningController> {
         key: controller.qrKey,
         onQRViewCreated: controller.onQRViewCreated,
         overlay: QrScannerOverlayShape(
-          borderColor: const AppColours().orangeAccent,
+          borderColor: const AppColours().secondarycolor,
           borderRadius: 10,
           borderLength: 20,
           borderWidth: 12,

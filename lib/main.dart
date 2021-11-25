@@ -1,4 +1,5 @@
 import 'package:cycle_lock/bindings/initial_binding.dart';
+import 'package:cycle_lock/widgets/colors.dart';
 import 'package:cycle_lock/widgets/pages_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -10,7 +11,7 @@ void main() async {
   SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
       overlays: [SystemUiOverlay.top]);
   SystemChrome.setSystemUIOverlayStyle(
-      const SystemUiOverlayStyle(statusBarColor: Colors.white70));
+      SystemUiOverlayStyle(statusBarColor: const AppColours().primarycolor));
   runApp(const MyApp());
 }
 
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) => GetMaterialApp(
         debugShowCheckedModeBanner: false,
+        theme: ThemeData.dark(),
         initialBinding: InitialBindings(),
         initialRoute: '/splash',
         getPages: getPages(),

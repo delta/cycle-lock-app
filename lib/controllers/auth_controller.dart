@@ -6,5 +6,5 @@ class AuthController extends GetxController {
   final PageController pageController = PageController(initialPage: 0);
 
   onSlide(int i) => index.value = i;
-  onLogin() => Get.toNamed('/main');
+  onLogin() => Get.offAllNamed('/main');
 }

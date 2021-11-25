@@ -1,4 +1,4 @@
-import 'package:cycle_lock/widgets/colours.dart';
+import 'package:cycle_lock/widgets/colors.dart';
 import 'package:flutter/material.dart';
 
 class CustomAppbar extends StatelessWidget {
@@ -12,14 +12,14 @@ class CustomAppbar extends StatelessWidget {
         child: Center(
           child: Text(
             title,
-            style: TextStyle(color: const AppColours().white, fontSize: 22),
+            style: TextStyle(color: const AppColours().bodycolor, fontSize: 22),
           ),
         ),
         decoration: BoxDecoration(
           borderRadius: const BorderRadius.only(
               bottomLeft: Radius.circular(40),
               bottomRight: Radius.circular(40)),
-          color: const AppColours().violetFill,
+          color: const AppColours().primarycolor,
         ),
       );
 }

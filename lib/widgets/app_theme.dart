@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:cycle_lock/widgets/colours.dart';
+import 'package:cycle_lock/widgets/colors.dart';
 
 @immutable
 class AppTheme {
