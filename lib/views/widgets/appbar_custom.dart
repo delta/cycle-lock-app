@@ -6,9 +6,9 @@ import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 import 'package:get/instance_manager.dart';
 
 class CustomAppbar extends StatelessWidget {
-  final String title;
-
-  const CustomAppbar({Key? key, required this.title}) : super(key: key);
+  const CustomAppbar({
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

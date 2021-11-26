@@ -17,9 +17,7 @@ class MainPage extends GetView<MainController> {
             Obx(
               () => pageList[controller.nav.value]['view']! as Widget,
             ),
-            CustomAppbar(
-              title: pageList[controller.nav.value]['name'] as String,
-            ),
+            const CustomAppbar(),
             const CustomBottomBar()
           ],
         ),
