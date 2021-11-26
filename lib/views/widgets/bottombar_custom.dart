@@ -4,8 +4,8 @@ import 'package:cycle_lock/widgets/pages_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/instance_manager.dart';
 
-class BottomBar extends StatelessWidget {
-  const BottomBar({Key? key}) : super(key: key);
+class CustomBottomBar extends StatelessWidget {
+  const CustomBottomBar({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

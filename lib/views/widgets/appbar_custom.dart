@@ -1,4 +1,4 @@
-import 'package:cycle_lock/widgets/colors.dart';
+import 'package:cycle_lock/views/themes/colors.dart';
 import 'package:flutter/material.dart';
 
 class CustomAppbar extends StatelessWidget {
