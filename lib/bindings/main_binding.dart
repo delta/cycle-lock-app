@@ -6,6 +6,6 @@ class MainBindings extends Bindings {
   @override
   void dependencies() {
     Get.lazyPut(() => MainController());
-    Get.lazyPut(() => ScanningController());
+    Get.put(ScanningController());
   }
 }

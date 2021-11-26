@@ -10,17 +10,16 @@ class MainPage extends GetView<MainController> {
 
   @override
   Widget build(BuildContext context) => SafeArea(
-        child: Obx(() => Scaffold(
-              key: controller.scaffoldKey,
-              body: Stack(
-                children: [
-                  pageList[controller.nav.value]['view']! as Widget,
-                  CustomAppbar(
-                    title: pageList[controller.nav.value]['name'] as String,
-                  ),
-                  const CustomBottomBar()
-                ],
-              ),
-            )),
-      );
+          child: Scaffold(
+        key: controller.scaffoldKey,
+        body: Stack(
+          children: [
+            Obx(
+              () => pageList[controller.nav.value]['view']! as Widget,
+            ),
+            const CustomAppbar(),
+            const CustomBottomBar()
+          ],
+        ),
+      ));
 }

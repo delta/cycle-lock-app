@@ -14,8 +14,9 @@ class SplashPage extends GetView<SplashController> {
             Positioned(
                 top: 250,
                 bottom: 100,
-                child: Center(
-                    child: Column(children: [
+                left: 50,
+                right: 50,
+                child: Column(children: [
                   Lottie.asset(
                     'assets/lottie/cycling.json',
                     animate: true,
@@ -29,7 +30,7 @@ class SplashPage extends GetView<SplashController> {
                           color: const AppColours().secondaryaccentcolor,
                         )
                       ]))
-                ]))),
+                ])),
             const Positioned(
                 bottom: 50,
                 right: 50,
