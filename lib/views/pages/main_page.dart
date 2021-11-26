@@ -1,6 +1,6 @@
 import 'package:cycle_lock/controllers/main_controller.dart';
+import 'package:cycle_lock/views/widgets/bottombar_custom.dart';
 import 'package:cycle_lock/widgets/appbar_custom.dart';
-import 'package:cycle_lock/widgets/bottomnavigation_view.dart';
 import 'package:cycle_lock/widgets/pages_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
@@ -18,7 +18,7 @@ class MainPage extends GetView<MainController> {
                   CustomAppbar(
                     title: pageList[controller.nav.value]['name'] as String,
                   ),
-                  BottomNavView(controller: controller)
+                  const CustomBottomBar()
                 ],
               ),
             )),
