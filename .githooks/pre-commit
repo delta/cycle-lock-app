@@ -1,11 +1,4 @@
 #!/usr/bin/env bash
-echo "Run Formatting..."
+echo "Run Formatter..."
 flutter format .
-echo "Run Linting..."
-flutter analyze
 
-if [ $? -ne 0 ] 
-then
-echo "flutter analyze error"
-  exit 1
-fi
