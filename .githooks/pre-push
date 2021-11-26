@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+if [[ `git status --porcelain` ]]
+then
+  echo "un-commited changes found, do commit or stash them"
+  exit 1
+fi
+
+echo "Run Analyzer..."
+flutter analyze
+
+if [ $? -ne 0 ] 
+then
+echo "flutter analyze error"
+  exit 1
+fi

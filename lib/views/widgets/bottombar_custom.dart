@@ -1,15 +1,15 @@
 import 'package:cycle_lock/controllers/main_controller.dart';
-import 'package:cycle_lock/widgets/pages_widget.dart';
+import 'package:cycle_lock/views/themes/colors.dart';
+import 'package:cycle_lock/views/widgets/pages_widget.dart';
 import 'package:flutter/material.dart';
-import 'colours.dart';
+import 'package:get/instance_manager.dart';
 
-class BottomNavView extends StatelessWidget {
-  final MainController controller;
-
-  const BottomNavView({Key? key, required this.controller}) : super(key: key);
+class CustomBottomBar extends StatelessWidget {
+  const CustomBottomBar({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final MainController controller = Get.find<MainController>();
     return Align(
       alignment: Alignment.bottomCenter,
       child: Container(
@@ -18,7 +18,7 @@ class BottomNavView extends StatelessWidget {
         width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
           borderRadius: const BorderRadius.all(Radius.circular(20)),
-          color: const AppColours().violetFill,
+          color: const AppColours().primarycolor,
         ),
         child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -33,14 +33,14 @@ class BottomNavView extends StatelessWidget {
                             borderRadius:
                                 const BorderRadius.all(Radius.circular(10)),
                             color: index == controller.nav.value
-                                ? const AppColours().orangeAccent
+                                ? const AppColours().secondarycolor
                                 : Colors.transparent,
                           ),
                           height: 45,
                           width: 45,
                           padding: const EdgeInsets.all(5),
                           child: Icon(value['icon'] as IconData,
-                              color: const AppColours().white),
+                              color: const AppColours().bodycolor),
                         ),
                         onTap: () {
                           controller.onClick(index);

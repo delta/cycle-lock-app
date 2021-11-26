@@ -3,7 +3,8 @@
 A Mobile Application for NITT students to digitally unlock/lock shared-cycles in stands.
 ## Requirements
 - Java-Version - '12.x'
-- Flutter-Version - '2.12' or above
+- Flutter-Version - '2.5.x'
+- Dart-Version - '2.12' or above
 - Android Studio or VS code
 
 ## Setup
@@ -22,6 +23,16 @@ flutter pub get
 * To run the App
 ```
 flutter run
+```
+
+## Adding GitHooks
+* Configure git-hooks path
+```
+git config core.hooksPath .githooks
+```
+* Set githooks/* as executable
+```
+chmod ug+x .githooks/* 
 ```
 
 ## WorkFlow

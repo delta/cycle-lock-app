@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+echo "Run Formatter..."
+flutter format .
+

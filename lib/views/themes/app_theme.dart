@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:cycle_lock/widgets/colours.dart';
+import 'package:cycle_lock/views/themes/colors.dart';
 
 @immutable
 class AppTheme {
@@ -7,7 +7,5 @@ class AppTheme {
 
   const AppTheme._();
 
-  static ThemeData define() {
-    return ThemeData();
-  }
+  static ThemeData define() => ThemeData();
 }
