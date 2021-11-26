@@ -1,6 +1,7 @@
 import 'package:cycle_lock/api/api_manager.dart';
 import 'package:cycle_lock/models/scan_model.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_blue/flutter_blue.dart';
 import 'package:get/get.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:get/instance_manager.dart';
@@ -26,11 +27,33 @@ class ScanningController extends GetxController with StateMixin<ScanningModel> {
     this.controller = controller;
     controller.scannedDataStream.listen((scanData) {
       result = scanData;
-      //Get.snackbar('QR', result!.code!);
+      Get.snackbar('QR', result!.code!);
     });
   }
 
   void flash() async {
     await controller?.toggleFlash();
+  }
+
+  FlutterBlue flutterBlue = FlutterBlue.instance;
+
+  void scanForDevices(String deviceId) {
+    flutterBlue.startScan(timeout: const Duration(seconds: 8));
+
+    flutterBlue.scanResults.listen((results) async {
+      for (ScanResult result in results) {
+        if (deviceId.isEmpty && deviceId == result.device.id.toString()) {
+          var device = result.device;
+          await device.connect();
+          flutterBlue.stopScan();
+        }
+      }
+    });
+  }
+
+  @override
+  void onClose() {
+    flutterBlue.stopScan();
+    super.onClose();
   }
 }
