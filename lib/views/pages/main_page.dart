@@ -1,7 +1,7 @@
 import 'package:cycle_lock/controllers/main_controller.dart';
 import 'package:cycle_lock/views/widgets/bottombar_custom.dart';
-import 'package:cycle_lock/widgets/appbar_custom.dart';
-import 'package:cycle_lock/widgets/pages_widget.dart';
+import 'package:cycle_lock/views/widgets/appbar_custom.dart';
+import 'package:cycle_lock/views/widgets/pages_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 
