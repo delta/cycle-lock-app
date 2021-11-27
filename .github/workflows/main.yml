@@ -30,12 +30,12 @@ jobs:
           flutter-version: ${{ env.flutter_version }}
       - name: Install dependencies
         run: flutter pub get
-      - name: Format
+      - if: github.event_name == 'pull_request'
         run: flutter format --dry-run . --set-exit-if-changed
-      - name: Lint
-        run:  flutter analyze
+      - if: github.event_name == 'pull_request'
+        run:  flutter analyze 
       - if: github.event_name == 'push'
-        run: flutter build apk
+        run: flutter build apk --dart-define=map_key=${{ secrets.MAP_KEY }}
       - if: github.event_name == 'push'
         uses: actions/upload-artifact@v1
         with:

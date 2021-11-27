@@ -1,17 +1,17 @@
+import 'package:cycle_lock/constants/carousel_list.dart';
 import 'package:cycle_lock/controllers/auth_controller.dart';
 import 'package:cycle_lock/views/themes/colors.dart';
-import 'package:cycle_lock/views/widgets/pages_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/instance_manager.dart';
 
-class Carousel extends StatelessWidget {
-  const Carousel({Key? key}) : super(key: key);
+class CarouselScreen extends StatelessWidget {
+  const CarouselScreen({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     final controller = Get.find<AuthController>();
     return PageView(
       controller: controller.pageController,
-      children: slideList
+      children: CarouselList.carouselList
           .map((index, value) => MapEntry(
               index,
               Column(
@@ -29,14 +29,15 @@ class Carousel extends StatelessWidget {
                         decoration: BoxDecoration(
                             //shape: BoxShape.rectangle,
                             image: DecorationImage(
-                                image: AssetImage(slideList[index]!.imageUrl),
+                                image: AssetImage(
+                                    CarouselList.carouselList[index]!.imageUrl),
                                 fit: BoxFit.contain)),
                       ),
                       const SizedBox(
                         height: 40,
                       ),
                       Text(
-                        slideList[index]!.title,
+                        CarouselList.carouselList[index]!.title,
                         style: TextStyle(
                           fontSize: 22,
                           fontWeight: FontWeight.bold,
@@ -47,7 +48,7 @@ class Carousel extends StatelessWidget {
                         height: 24,
                       ),
                       Text(
-                        slideList[index]!.description,
+                        CarouselList.carouselList[index]!.description,
                         textAlign: TextAlign.center,
                         style: const TextStyle(
                           fontSize: 18,

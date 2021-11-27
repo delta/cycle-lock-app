@@ -6,6 +6,8 @@
    <application
         android:label="Cycle Lock"
         android:icon="@mipmap/ic_launcher">
+          <meta-data android:name="com.google.android.geo.API_KEY"
+               android:value="@string/map_key"/>
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"

@@ -7,6 +7,6 @@ class AppColours {
   final primarycolor = const Color(0xff242B2E);
   final secondarycolor = const Color.fromARGB(150, 36, 195, 20);
   final secondaryaccentcolor = const Color.fromARGB(150, 36, 195, 20);
-
+  final secondaryaccentcolor2 = const Color.fromARGB(255, 2, 200, 20);
   const AppColours();
 }

@@ -1,6 +1,6 @@
+import 'package:cycle_lock/constants/screen_list.dart';
 import 'package:cycle_lock/controllers/main_controller.dart';
 import 'package:cycle_lock/views/themes/colors.dart';
-import 'package:cycle_lock/views/widgets/pages_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 import 'package:get/instance_manager.dart';
@@ -11,38 +11,41 @@ class CustomBottomBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final MainController controller = Get.find<MainController>();
-    return Align(
-      alignment: Alignment.bottomCenter,
+    return Positioned(
+      bottom: 0,
+      left: 0,
       child: Container(
-        margin: const EdgeInsets.symmetric(horizontal: 30, vertical: 30),
         height: 65,
         width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
-          borderRadius: const BorderRadius.all(Radius.circular(20)),
+          borderRadius: const BorderRadius.only(
+              topLeft: Radius.circular(40), topRight: Radius.circular(40)),
           color: const AppColours().primarycolor,
         ),
         child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: pageList
+            children: ScreenList.screenList
                 .asMap()
                 .map((index, value) => MapEntry(
                     index,
                     Flexible(
                         child: Obx(
                       () => InkWell(
-                        child: Container(
+                        child: AnimatedContainer(
                           decoration: BoxDecoration(
                             borderRadius:
-                                const BorderRadius.all(Radius.circular(10)),
+                                const BorderRadius.all(Radius.circular(40)),
                             color: index == controller.nav.value
                                 ? const AppColours().secondarycolor
                                 : Colors.transparent,
                           ),
-                          height: 45,
-                          width: 45,
-                          padding: const EdgeInsets.all(5),
+                          height: controller.nav.value == index ? 50 : 40,
+                          width: controller.nav.value == index ? 50 : 40,
+                          duration: const Duration(milliseconds: 200),
                           child: Icon(value['icon'] as IconData,
-                              color: const AppColours().bodycolor),
+                              color: index == controller.nav.value
+                                  ? Colors.white
+                                  : Colors.white70),
                         ),
                         onTap: () {
                           controller.onClick(index);
