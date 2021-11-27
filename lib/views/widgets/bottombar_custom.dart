@@ -1,5 +1,4 @@
 import 'package:cycle_lock/controllers/main_controller.dart';
-import 'package:cycle_lock/views/pages/main_page.dart';
 import 'package:cycle_lock/views/themes/colors.dart';
 import 'package:cycle_lock/views/widgets/pages_widget.dart';
 import 'package:flutter/material.dart';
