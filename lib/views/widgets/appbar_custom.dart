@@ -15,7 +15,7 @@ class CustomAppbar extends StatelessWidget {
     final MainController controller = Get.find<MainController>();
 
     return Container(
-      height: 53,
+      height: 55,
       child: Center(
         child: Obx(
           () => Text(

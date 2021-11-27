@@ -18,7 +18,7 @@ class MainPage extends GetView<MainController> {
               () => pageList[controller.nav.value]['view']! as Widget,
             ),
             const CustomAppbar(),
-            const CustomBottomBar()
+            const CustomBottomBar(),
           ],
         ),
       ));

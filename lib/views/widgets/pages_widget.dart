@@ -1,11 +1,11 @@
 import 'package:cycle_lock/bindings/auth_binding.dart';
 import 'package:cycle_lock/bindings/main_binding.dart';
-import 'package:cycle_lock/bindings/scan_binding.dart';
 import 'package:cycle_lock/bindings/splash_binding.dart';
 import 'package:cycle_lock/models/slide.dart';
 import 'package:cycle_lock/views/pages/auth_page.dart';
 import 'package:cycle_lock/views/pages/main_page.dart';
-import 'package:cycle_lock/views/pages/screens/scan_view.dart';
+import 'package:cycle_lock/views/pages/screens/map_screen.dart';
+import 'package:cycle_lock/views/pages/screens/scan_screen.dart';
 import 'package:cycle_lock/views/pages/splash_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -31,22 +31,11 @@ List<GetPage<dynamic>> getPages() => [
         page: () => const MainPage(),
         binding: MainBindings(),
       ),
-      GetPage(
-        name: '/scan',
-        page: () => const ScanView(),
-        binding: ScanningBindings(),
-      )
     ];
 
 const pageList = [
-  {
-    'name': 'Map',
-    'view': Center(
-      child: Text('Map page'),
-    ),
-    'icon': Icons.map_sharp
-  },
-  {'name': 'Scan', 'view': ScanView(), 'icon': Icons.qr_code},
+  {'name': 'Map', 'view': MapScreen(), 'icon': Icons.map},
+  {'name': 'Scan', 'view': ScanScreen(), 'icon': Icons.qr_code},
   {
     'name': 'Profile',
     'view': Center(child: Text('Profile Page')),

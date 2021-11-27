@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         theme: ThemeData.dark(),
         initialBinding: InitialBindings(),
-        initialRoute: '/splash',
+        initialRoute: '/main',
         getPages: getPages(),
       );
 }

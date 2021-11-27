@@ -9,10 +9,10 @@ import 'package:qr_code_scanner/qr_code_scanner.dart';
 
 class ScanningController extends GetxController with StateMixin<ScanningModel> {
   final _apiManager = Get.find<ApiManager>();
-  String scanResult = '';
+  var isFlashOn = false.obs;
   final GlobalKey qrKey = GlobalKey(debugLabel: 'QR');
   Barcode? result;
-  QRViewController? controller;
+  QRViewController? qrController;
 
   Future<void> scanQR(String barcode) async {
     final Response response = await _apiManager.scanQR({'barcode': barcode});
@@ -24,7 +24,7 @@ class ScanningController extends GetxController with StateMixin<ScanningModel> {
   }
 
   void onQRViewCreated(QRViewController controller) async {
-    this.controller = controller;
+    qrController = controller;
     controller.scannedDataStream.listen((scanData) {
       result = scanData;
       Get.snackbar('QR', result!.code!);
@@ -32,7 +32,8 @@ class ScanningController extends GetxController with StateMixin<ScanningModel> {
   }
 
   void flash() async {
-    await controller?.toggleFlash();
+    await qrController?.toggleFlash();
+    qrController?.getFlashStatus().then((value) => isFlashOn.value = value!);
   }
 
   FlutterBlue flutterBlue = FlutterBlue.instance;

@@ -5,7 +5,7 @@ A Mobile Application for NITT students to digitally unlock/lock shared-cycles in
 - Java-Version - '12.x'
 - Flutter-Version - '2.5.x'
 - Dart-Version - '2.12' or above
-- Android Studio or VS code
+- Android Studio
 
 ## Setup
 * Fork and Clone the Repo
@@ -20,9 +20,9 @@ git remote add upstream <MAIN_REPO_URL>
 ```
 flutter pub get
 ```
-* To run the App
+* To run the App by passing the map api key as command line argument
 ```
-flutter run
+flutter run --dart-define=map_key=<MAP_KEY>
 ```
 
 ## Adding GitHooks
