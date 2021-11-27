@@ -1,6 +1,6 @@
 import 'package:cycle_lock/models/slide.dart';
 
-class Carousels {
+class CarouselList {
   static Map<int, Slide?> carouselList = {
     0: Slide(
         imageUrl: 'assets/images/lock.png',

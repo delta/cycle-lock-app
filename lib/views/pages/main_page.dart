@@ -1,4 +1,4 @@
-import 'package:cycle_lock/constants/screens_List.dart';
+import 'package:cycle_lock/constants/screen_list.dart';
 import 'package:cycle_lock/controllers/main_controller.dart';
 import 'package:cycle_lock/views/widgets/bottombar_custom.dart';
 import 'package:cycle_lock/views/widgets/appbar_custom.dart';
@@ -15,7 +15,8 @@ class MainPage extends GetView<MainController> {
         body: Stack(
           children: [
             Obx(
-              () => Screens.screenList[controller.nav.value]['view']! as Widget,
+              () => ScreenList.screenList[controller.nav.value]['view']!
+                  as Widget,
             ),
             const CustomAppbar(),
             const CustomBottomBar(),

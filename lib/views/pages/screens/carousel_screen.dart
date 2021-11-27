@@ -11,7 +11,7 @@ class CarouselScreen extends StatelessWidget {
     final controller = Get.find<AuthController>();
     return PageView(
       controller: controller.pageController,
-      children: Carousels.carouselList
+      children: CarouselList.carouselList
           .map((index, value) => MapEntry(
               index,
               Column(
@@ -30,14 +30,14 @@ class CarouselScreen extends StatelessWidget {
                             //shape: BoxShape.rectangle,
                             image: DecorationImage(
                                 image: AssetImage(
-                                    Carousels.carouselList[index]!.imageUrl),
+                                    CarouselList.carouselList[index]!.imageUrl),
                                 fit: BoxFit.contain)),
                       ),
                       const SizedBox(
                         height: 40,
                       ),
                       Text(
-                        Carousels.carouselList[index]!.title,
+                        CarouselList.carouselList[index]!.title,
                         style: TextStyle(
                           fontSize: 22,
                           fontWeight: FontWeight.bold,
@@ -48,7 +48,7 @@ class CarouselScreen extends StatelessWidget {
                         height: 24,
                       ),
                       Text(
-                        Carousels.carouselList[index]!.description,
+                        CarouselList.carouselList[index]!.description,
                         textAlign: TextAlign.center,
                         style: const TextStyle(
                           fontSize: 18,

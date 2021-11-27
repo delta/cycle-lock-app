@@ -19,7 +19,7 @@ class CarouselDots extends StatelessWidget {
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: Carousels.carouselList
+                  children: CarouselList.carouselList
                       .map((index, value) => MapEntry(
                           index,
                           GestureDetector(

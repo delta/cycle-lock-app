@@ -1,4 +1,4 @@
-import 'package:cycle_lock/constants/screens_List.dart';
+import 'package:cycle_lock/constants/screen_list.dart';
 import 'package:cycle_lock/controllers/main_controller.dart';
 import 'package:cycle_lock/views/themes/colors.dart';
 import 'package:flutter/material.dart';
@@ -19,7 +19,7 @@ class CustomAppbar extends StatelessWidget {
       child: Center(
         child: Obx(
           () => Text(
-            Screens.screenList[controller.nav.value]['name'] as String,
+            ScreenList.screenList[controller.nav.value]['name'] as String,
             style: TextStyle(color: const AppColours().bodycolor, fontSize: 22),
           ),
         ),
