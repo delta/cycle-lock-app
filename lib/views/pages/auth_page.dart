@@ -1,7 +1,7 @@
 import 'package:cycle_lock/controllers/auth_controller.dart';
-import 'package:cycle_lock/views/widgets/carousel.dart';
+import 'package:cycle_lock/views/pages/screens/carousel_screen.dart';
 import 'package:cycle_lock/views/widgets/dauth_button.dart';
-import 'package:cycle_lock/views/widgets/dots.dart';
+import 'package:cycle_lock/views/widgets/carousel_dots.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 
@@ -18,7 +18,7 @@ class AuthPage extends GetView<AuthController> {
                 Expanded(
                   child: Stack(
                     alignment: AlignmentDirectional.bottomCenter,
-                    children: const <Widget>[Carousel(), SlideDots()],
+                    children: const <Widget>[CarouselScreen(), CarouselDots()],
                   ),
                 ),
                 const SizedBox(

@@ -1,6 +1,6 @@
 import 'package:cycle_lock/bindings/initial_binding.dart';
+import 'package:cycle_lock/views/routes/navigation_pages.dart';
 import 'package:cycle_lock/views/themes/colors.dart';
-import 'package:cycle_lock/views/widgets/pages_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/route_manager.dart';
@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         theme: ThemeData.dark(),
         initialBinding: InitialBindings(),
-        initialRoute: '/main',
-        getPages: getPages(),
+        initialRoute: '/splash',
+        getPages: NavigationPages.getPages(),
       );
 }
