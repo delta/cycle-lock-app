@@ -1,10 +1,15 @@
 import 'package:cycle_lock/controllers/auth_controller.dart';
 import 'package:cycle_lock/views/themes/colors.dart';
 import 'package:flutter/material.dart';
+// ignore: implementation_imports
+import 'package:flutter_dauth/src/model/requests/token_request.dart';
 import 'package:get/instance_manager.dart';
 
 class DauthButton extends StatelessWidget {
-  const DauthButton({Key? key}) : super(key: key);
+  final Function onPressed;
+  final TokenRequest request;
+  const DauthButton({Key? key, required this.onPressed, required this.request})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {

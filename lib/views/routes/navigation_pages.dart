@@ -20,7 +20,7 @@ class NavigationPages {
         ),
         GetPage(
           name: NavigationRoutes.authRoute,
-          page: () => const AuthPage(),
+          page: () => AuthPage(),
           binding: AuthBindings(),
           transition: Transition.rightToLeft,
         ),
