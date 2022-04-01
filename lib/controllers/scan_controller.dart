@@ -3,8 +3,6 @@ import 'package:cycle_lock/models/scan_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_blue/flutter_blue.dart';
 import 'package:get/get.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
-import 'package:get/instance_manager.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
 
 class ScanningController extends GetxController with StateMixin<ScanningModel> {
