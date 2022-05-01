@@ -11,6 +11,12 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+
+  # State Management
+  bloc: ^8.0.3
+  flutter_bloc: ^8.0.1
+
+  # Other
   qr_code_scanner: ^0.6.1
   google_fonts: ^2.1.0
   google_maps_flutter: ^2.1.1
