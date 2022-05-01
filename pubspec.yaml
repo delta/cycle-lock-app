@@ -20,7 +20,7 @@ dependencies:
   equatable: ^2.0.3
 
   # Other
-  qr_code_scanner: ^0.6.1
+  mobile_scanner: ^1.0.0
   google_fonts: ^2.1.0
   google_maps_flutter: ^2.1.1
   flutter_blue: ^0.8.0

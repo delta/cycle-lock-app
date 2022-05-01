@@ -6,6 +6,6 @@ import 'package:flutter/material.dart';
 
 final homePages = [
   MenuItem('Map', Icons.map, const MapScreen()),
-  MenuItem('Scan', Icons.qr_code, const ScanScreen()),
+  MenuItem('Scan', Icons.qr_code, ScanScreen()),
   MenuItem('Profile', Icons.person, const ProfileScreen()),
 ];
