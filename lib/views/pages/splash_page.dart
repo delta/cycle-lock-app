@@ -1,7 +1,6 @@
 import 'package:cycle_lock/controllers/splash_controller.dart';
 import 'package:cycle_lock/views/themes/colors.dart';
 import 'package:flutter/material.dart';
-import 'package:lottie/lottie.dart';
 import 'package:get/get.dart';
 
 class SplashPage extends GetView<SplashController> {
@@ -17,9 +16,8 @@ class SplashPage extends GetView<SplashController> {
                 left: 50,
                 right: 50,
                 child: Column(children: [
-                  Lottie.asset(
-                    'assets/lottie/cycling.json',
-                    animate: true,
+                  Image.asset(
+                    'assets/images/lock.png',
                   ),
                   const SizedBox(height: 10),
                   Text('Pad-Lock',
