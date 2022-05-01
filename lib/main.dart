@@ -1,5 +1,7 @@
+import 'package:cycle_lock/bloc/cubit/home_cubit.dart';
 import 'package:cycle_lock/views/pages/home_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() async => runApp(const MyApp());
 
@@ -10,6 +12,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) => MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData.dark(),
-        home: const HomePage(),
+        home: BlocProvider(
+          create: (context) => HomeCubit(),
+          child: const HomePage(),
+        ),
       );
 }
