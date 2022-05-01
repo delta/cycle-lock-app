@@ -1,7 +1,7 @@
 import 'package:cycle_lock/views/themes/colors.dart';
 import 'package:flutter/material.dart';
 
-class HomeAppBar extends StatelessWidget {
+class HomeAppBar extends StatelessWidget with PreferredSizeWidget {
   final String title;
 
   const HomeAppBar({Key? key, required this.title}) : super(key: key);
@@ -22,4 +22,7 @@ class HomeAppBar extends StatelessWidget {
           color: const AppColours().primarycolor,
         ),
       );
+
+  @override
+  Size get preferredSize => const Size(double.infinity, 60);
 }

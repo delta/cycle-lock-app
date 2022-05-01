@@ -5,7 +5,7 @@ import 'package:equatable/equatable.dart';
 part 'home_state.dart';
 
 class HomeCubit extends Cubit<HomeState> {
-  HomeCubit() : super(HomeState(0, homePages[0].name));
+  HomeCubit() : super(HomeState(1, homePages[1].name));
 
   void onPageSelect(int newIndex) {
     final int index = state.index;
