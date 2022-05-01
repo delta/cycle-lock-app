@@ -1,4 +1,4 @@
-import 'package:cycle_lock/bloc/cubit/home_cubit.dart';
+import 'package:cycle_lock/bloc/home/home_cubit.dart';
 import 'package:cycle_lock/constants/home_pages.dart';
 import 'package:cycle_lock/views/widgets/home_bottom_bar.dart';
 import 'package:cycle_lock/views/widgets/home_app_bar.dart';
