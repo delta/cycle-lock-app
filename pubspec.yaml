@@ -16,6 +16,9 @@ dependencies:
   bloc: ^8.0.3
   flutter_bloc: ^8.0.1
 
+  # Needed for better state classes in Bloc
+  equatable: ^2.0.3
+
   # Other
   qr_code_scanner: ^0.6.1
   google_fonts: ^2.1.0
