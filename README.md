@@ -2,12 +2,6 @@
 
 App for the NITT Bluetooth Cycle Lock Project
 
-## Requirements
-- Java-Version - '12.x'
-- Flutter-Version - '2.5.x'
-- Dart-Version - '2.12' or above
-- Android Studio
-
 ## Setup
 * Fork and Clone the Repo
 ```
@@ -17,11 +11,11 @@ git clone <YOUR_FORK_URL>
 ```
 git remote add upstream <MAIN_REPO_URL>
 ```
-* To get all the dependencies listed in the pubspec
+* Download dependencies
 ```
 flutter pub get
 ```
-* To run the App by passing the map api key as command line argument
+* To run the App by passing the map api key
 ```
 flutter run --dart-define=map_key=<MAP_KEY>
 ```
@@ -37,5 +31,6 @@ chmod ug+x .githooks/*
 ```
 
 ## Resources
-- [Flutter documentation](https://flutter.dev/docs)
-- [GetX](https://pub.dev/packages/get)
+- [Flutter docs](https://flutter.dev/docs)
+- [Bloc](https://bloclibrary.dev/)
+- [gorouter](https://gorouter.dev/)

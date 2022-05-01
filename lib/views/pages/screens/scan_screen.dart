@@ -1,35 +1,68 @@
-import 'package:cycle_lock/controllers/scan_controller.dart';
-import 'package:cycle_lock/views/themes/colors.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
-import 'package:qr_code_scanner/qr_code_scanner.dart';
+import 'package:mobile_scanner/mobile_scanner.dart';
 
-class ScanScreen extends GetView<ScanningController> {
+class ScanScreen extends StatefulWidget {
   const ScanScreen({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) => Stack(children: <Widget>[
-        Positioned(child: qrView(context)),
-        Positioned(bottom: 100, right: 50, left: 50, child: controlButtons())
-      ]);
+  State<ScanScreen> createState() => _ScanScreenState();
+}
 
-  Widget qrView(context) => QRView(
-        key: controller.qrKey,
-        onQRViewCreated: controller.onQRViewCreated,
-        overlay: QrScannerOverlayShape(
-          borderColor: const AppColours().secondarycolor,
-          borderRadius: 10,
-          borderLength: 20,
-          borderWidth: 12,
-          cutOutSize: MediaQuery.of(context).size.width * 0.6,
-        ),
-      );
+class _ScanScreenState extends State<ScanScreen>
+    with AutomaticKeepAliveClientMixin {
+  @override
+  bool get wantKeepAlive => false;
+  final cameraController = MobileScannerController();
 
-  Widget controlButtons() => IconButton(
-      onPressed: controller.flash,
-      icon: Obx(() => AnimatedContainer(
-          duration: const Duration(milliseconds: 200),
-          child: controller.isFlashOn.value
-              ? const Icon(Icons.flash_off_rounded)
-              : const Icon(Icons.flash_on_rounded))));
+  @override
+  Widget build(BuildContext context) {
+    super.build(context);
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Mobile Scanner'),
+        actions: [
+          IconButton(
+            color: Colors.white,
+            icon: ValueListenableBuilder<TorchState>(
+              valueListenable: cameraController.torchState,
+              builder: (context, state, child) {
+                switch (state) {
+                  case TorchState.off:
+                    return const Icon(Icons.flash_off, color: Colors.grey);
+                  case TorchState.on:
+                    return const Icon(Icons.flash_on, color: Colors.yellow);
+                }
+              },
+            ),
+            iconSize: 32.0,
+            onPressed: cameraController.toggleTorch,
+          ),
+          IconButton(
+            color: Colors.white,
+            icon: ValueListenableBuilder(
+              valueListenable: cameraController.cameraFacingState,
+              builder: (context, state, child) {
+                switch (state as CameraFacing) {
+                  case CameraFacing.front:
+                    return const Icon(Icons.camera_front);
+                  case CameraFacing.back:
+                    return const Icon(Icons.camera_rear);
+                }
+              },
+            ),
+            iconSize: 32.0,
+            onPressed: cameraController.switchCamera,
+          ),
+        ],
+      ),
+      body: MobileScanner(
+        allowDuplicates: false,
+        controller: cameraController,
+        onDetect: (barcode, args) {
+          final code = barcode.rawValue;
+          debugPrint('Barcode found! $code');
+        },
+      ),
+    );
+  }
 }
