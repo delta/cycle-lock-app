@@ -1,5 +1,6 @@
 import 'package:cycle_lock/views/themes/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({Key? key}) : super(key: key);
@@ -17,7 +18,7 @@ class _SplashPageState extends State<SplashPage> {
 
   Future<void> checkAuthState() async {
     await Future.delayed(const Duration(seconds: 1));
-    print('Logged in');
+    context.go('/home');
   }
 
   @override
