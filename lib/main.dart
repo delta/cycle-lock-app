@@ -4,10 +4,8 @@ import 'package:cycle_lock/views/themes/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/route_manager.dart';
-import 'package:get_storage/get_storage.dart';
 
 void main() async {
-  await GetStorage.init('Cache');
   SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
       overlays: [SystemUiOverlay.top]);
   SystemChrome.setSystemUIOverlayStyle(
