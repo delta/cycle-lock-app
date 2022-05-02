@@ -9,17 +9,12 @@ class HomeAppBar extends StatelessWidget with PreferredSizeWidget {
   @override
   Widget build(BuildContext context) => Container(
         height: 55,
+        color: const AppColours().primarycolor,
         child: Center(
           child: Text(
             title,
             style: TextStyle(color: const AppColours().bodycolor, fontSize: 22),
           ),
-        ),
-        decoration: BoxDecoration(
-          borderRadius: const BorderRadius.only(
-              bottomLeft: Radius.circular(40),
-              bottomRight: Radius.circular(40)),
-          color: const AppColours().primarycolor,
         ),
       );
 
