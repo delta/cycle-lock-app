@@ -15,12 +15,7 @@ class HomeBottomBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Container(
         height: 65,
-        width: MediaQuery.of(context).size.width,
-        decoration: BoxDecoration(
-          borderRadius: const BorderRadius.only(
-              topLeft: Radius.circular(40), topRight: Radius.circular(40)),
-          color: const AppColours().primarycolor,
-        ),
+        color: const AppColours().primarycolor,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: homePages.map(
