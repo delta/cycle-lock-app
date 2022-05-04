@@ -19,14 +19,21 @@ dependencies:
   # Needed for better state classes in Bloc
   equatable: ^2.0.3
 
+  # Http
+  dio: ^4.0.6
+
   # Routing
   go_router: ^3.1.0
 
-  # Other
+  # Bluetooth
+  flutter_blue: ^0.8.0
+
+  # Qr code
   mobile_scanner: ^1.0.0
+
+  # Other
   google_fonts: ^2.1.0
   google_maps_flutter: ^2.1.1
-  flutter_blue: ^0.8.0
 
 dev_dependencies:
   flutter_native_splash: ^1.3.1
@@ -34,6 +41,8 @@ dev_dependencies:
     sdk: flutter
 
   flutter_lints: ^1.0.0
+  build_runner: ^2.1.10
+  flutter_gen_runner: ^4.1.6
 
 flutter:
   uses-material-design: true

@@ -1,3 +1,4 @@
+import 'package:cycle_lock/gen/assets.gen.dart';
 import 'package:cycle_lock/views/themes/colors.dart';
 import 'package:flutter/material.dart';
 
@@ -15,8 +16,7 @@ class DauthButton extends StatelessWidget {
             children: [
               Flexible(
                 flex: 1,
-                child: Image.asset(
-                  'assets/images/delta_logo.png',
+                child: Assets.images.deltaLogo.image(
                   height: 32.5,
                   width: 32.5,
                 ),

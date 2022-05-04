@@ -1,3 +1,4 @@
+import 'package:cycle_lock/gen/assets.gen.dart';
 import 'package:cycle_lock/views/themes/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -32,7 +33,7 @@ class _SplashPageState extends State<SplashPage> {
               right: 50,
               child: Column(
                 children: [
-                  Image.asset('assets/images/lock.png'),
+                  Assets.images.lock.image(),
                   const SizedBox(height: 10),
                   Text(
                     'Pad-Lock',
